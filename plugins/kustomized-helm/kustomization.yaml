@@ -1,7 +1,11 @@
 namePrefix: kustomize-
 
 resources:
-- ./all.yaml
+  - ./all.yaml
 
 patches:
-- overlays/guestbook-deployment.yaml
+  - overlays/guestbook-deployment.yaml
+
+images:
+  - name: gcr.io/heptio-images/ks-guestbook-demo
+    newName: enqi/ks-guestbook-demo
